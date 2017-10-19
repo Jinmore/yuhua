@@ -1,0 +1,150 @@
+{template "content","header"}
+<div class="message">
+{template "content","select"}
+    <!--弹出的内容-->
+    <div class="conBox scroll">
+        <div class="title clear">
+            <h3 class="fl" id="titleselect">一级承修类承装（修、试）电力设施许可证</h3>
+            <div class="close fr"></div>
+        </div>
+        <div class="bot">
+
+
+        </div>
+    </div>
+    <div class="blank"></div>
+</div>
+<div class="main">
+    <div class="zi">
+        <div class="inner">
+            <div class="baseTitle">
+                <h3>资质代理</h3>
+                <p>Qualification agent</p>
+            </div>
+            <ul class="clear">
+            {pc:content action="category" catid="1" num="3"  order="listorder ASC" return="data"}
+            {loop $data $r}
+                <li>
+                    <a href="{$r[url]}">
+                        <div class="icon">
+                            <img src="{IMG_PATH}default/zi_{$n}.png" class="img1">
+                            <img src="{IMG_PATH}default/zi2_{$n}.png" class="img2">
+                        </div>
+                        <div class="title1">{$r[catname]}</div>
+                        <div class="text">{$r[description_er]}</div>
+                        <div class="arrow"></div>
+                    </a>
+                </li>
+            {/loop}
+            {/pc}
+                <li>
+                    <a href="{$CATEGORYS[2][url]}">
+                        <div class="icon">
+                            <img src="{IMG_PATH}default/zi_4.png" class="img1">
+                            <img src="{IMG_PATH}default/zi2_4.png" class="img2">
+                        </div>
+                        <div class="title1">{$CATEGORYS[2][catname]}</div>
+                        <div class="text">{$CATEGORYS[2][description]}</div>
+                        <div class="arrow"></div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="icon">
+                            <img src="{IMG_PATH}default/zi_5.png" class="img1">
+                            <img src="{IMG_PATH}default/zi2_5.png" class="img2">
+                        </div>
+                        <div class="title1">八大员、技工证书培训取证</div>
+                        <div class="text">为企业代办建筑类资质、简化条</div>
+                        <div class="arrow"></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="you">
+        <div class="baseTitle">
+            <h3>核心优势</h3>
+            <p>core advantages</p>
+        </div>
+        <img src="{$CATEGORYS[15][image]}">
+    </div>
+    <div class="an">
+        <div class="inner">
+            <div class="baseTitle">
+                <h3>成功案例</h3>
+                <p>success case</p>
+            </div>
+            <div id="box">
+                <pre class="prev"><img src="{IMG_PATH}default/pre_03.png"></pre>
+                <pre class="next"><img src="{IMG_PATH}default/pre_05.png"></pre>
+                <ul>
+                  {pc:content action="lists" catid="4" order="listorder desc"}
+                  {loop $data $r}
+                    <li><img src="{$r[thumb]}"></li>
+                  {/loop}
+                  {/pc}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="six">
+        <div class="inner">
+            <div class="baseTitle">
+                <h3>六大步骤，让服务更高效</h3>
+                <p>SIX STEPS TO MAKE SERVICES MORE EFFICIENT</p>
+            </div>
+            <ul class="clear">
+              {pc:content action="lists" catid="16" order="listorder desc,id desc"}
+              {loop $data $r}
+                  <li><a href="javascript:;"><img src="{$r[thumb]}"><p>{$r[title]}</p></a></li>
+              {/loop}
+              {/pc}
+
+            </ul>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="news">
+            <div class="baseTitle">
+                <h3>新闻动态</h3>
+                <p>news</p>
+            </div>
+            <div class="mid clear">
+              {pc:content action="position" posid="1" order="listorder desc,id desc" start="0" num="1"}
+              {loop $data $r}
+              <div class="left fl"><img src="{$r[thumb]}"></div>
+              <div class="right fr">
+                  <div class="time">{date('m',$r['inputtime'])}/{date('d',$r['inputtime'])}</div>
+                  <a href="{$r[url]}" class="title">{$r[title]}</a>
+                  <div class="text">
+                    {str_cut(strip_tags($r[description]),500)}
+                  </div>
+                  <a href="{$r[url]}" class="more">点击更多</a>
+              </div>
+              {/loop}
+              {/pc}
+
+            </div>
+            <ul class="clear">
+              {pc:content action="position" posid="1" order="listorder desc,id desc" start="1" num="3"}
+              {loop $data $r}
+              <li>
+                  <div class="time">{date('m',$r['inputtime'])}/{date('d',$r['inputtime'])}</div>
+                  <a href="{$r[url]}" class="title">{$r[title]}</a>
+                  <div class="text">
+                    {str_cut(strip_tags($r[description]),200)}
+                  </div>
+                  <a href="{$r[url]}" class="more">
+                      <img src="{IMG_PATH}default/more_03.png" class="img1">
+                      <img src="{IMG_PATH}default/more2_03.png" class="img2">
+                  </a>
+              </li>
+              {/loop}
+              {/pc}
+            </ul>
+        </div>
+    </div>
+</div>
+{template "content","footer"}

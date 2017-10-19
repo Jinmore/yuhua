@@ -1,0 +1,27 @@
+{template "content","header"}
+<div class="search">
+    <div class="inner">
+        <div class="base2Title base2Title2">查询工具</div>
+
+        {pc:content action="category" catid="3"  order="listorder ASC" return="data"}
+          {loop $data $r}
+          <div class="box">
+              <div class="title"><img src="{IMG_PATH}default/search_03.png">{$r[catname]}</div>
+              <ul class="clear">
+                {pc:content action="lists" catid="$r[catid]" order="listorder desc" moreinfo="1" return="data2"}
+                <li class="clear">
+                {loop $data2 $v}
+                    <a href="">{$v[title]}</a>
+                    {if $n%4==0}
+                  
+                    {/if}
+                {/loop}
+                </li>
+                {/pc}
+              </ul>
+          </div>
+          {/loop}
+      {/pc}
+    </div>
+</div>
+{template "content","footer"}

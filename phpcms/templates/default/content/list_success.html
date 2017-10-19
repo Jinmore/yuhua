@@ -1,0 +1,29 @@
+{template "content","header"}
+<div class="success">
+    <div class="inner">
+        <div class="base2Title base2Title2">成功案例</div>
+        <ul class="anUl clear">
+
+        {pc:content action="lists" catid="$catid"  order="listorder desc" num="12" return="data" page="$page"}
+          {loop $data $r}
+          <li>
+              <a href="{IMG_PATH}default/anPic_03.jpg" target="_blank">
+                  <div class="top">
+                      <p><img src="{IMG_PATH}default/an_03.png">{$r[title]}</p>
+                  </div>
+                  <img src="{IMG_PATH}default/anPic_03.jpg">
+                  <div class="bot">{$r[timeaddr]}</div>
+              </a>
+          </li>
+          {/loop}
+          {/pc}
+
+        </ul>
+        <div class="pages">
+          {$pages}
+        </div>
+
+    </div>
+
+</div>
+{template "content","footer"}

@@ -1,0 +1,34 @@
+{template "public","header"}
+
+<div class="case cl">
+  <div class="case-title cl">
+     <div class="lists fl">
+       {pc:content action="category" catid="3" num="25"  order="listorder ASC" return="data"}
+        {loop $data $r}
+        <a href="{$r[url]}" {if 17==$r[catid]} class="hover"{/if}>{$r[catname]}</a>
+        {/loop}
+        {/pc}
+     </div>
+  </div>
+
+  <div class="beihou-story cl">
+    {pc:content action="lists" catid="17" order="listorder desc" moreinfo="1"}
+    {loop $data $r}
+    <div class="list-story cl">
+       <a href="{$r[url]}" target="_blank">
+          <div class="story-pic fl">
+             <img class="lazy" src="{$r[thumb]}" data-original="{$r[thumb]}" class="fl">
+          </div>
+          <div class="story-txt fr">
+             <h3>CUSTOMER</h3>
+             <h4>客户/<span>{$r[customer]}</span></h4>
+             <div class="con">{$r[title]}</div>
+             <div class="more">点击进入</div>
+          </div>
+       </a>
+    </div>
+    {/loop}
+    {/pc}
+  </div>
+</div>
+{template "public","footer"}

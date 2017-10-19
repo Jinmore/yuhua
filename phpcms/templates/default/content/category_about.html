@@ -1,0 +1,45 @@
+{template "content","header"}
+<div class="about">
+    <div class="inner">
+        <div class="box">
+            <ul class="aboutUl clear">
+                <li class="bg"><a href="{$CATEGORYS[6][url]}">公司介绍</a></li>
+                <li><a href="{$CATEGORYS[28][url]}">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="baseBox">
+          {pc:get  sql="select * from ld_about_data  where id='1'" num="1"}
+          {loop $data $r}
+          {$r[jianjie]}
+          {/loop}
+          {/pc}
+
+        </div>
+    </div>
+    {pc:get  sql="select * from ld_about_data  where id='1'" num="1"}
+    {loop $data $r}
+    <div class="Promise">
+        <div class="inner">
+            <div class="baseBox baseBox2">
+              {$r[chengnuo]}
+            </div>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="te clear">
+            <div class="left fl">
+                <div class="baseBox baseBox2">
+                    {$r[tese]}
+                </div>
+                <div class="baseBox baseBox2">
+                  {$r[content]}
+                </div>
+
+            </div>
+            <div class="right fr"><img src="{IMG_PATH}default/te_04.png"></div>
+        </div>
+    </div>
+    {/loop}
+    {/pc}
+</div>
+{template "content","footer"}

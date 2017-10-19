@@ -1,0 +1,37 @@
+{template "content","header"}
+<div class="about new">
+    <div class="inner">
+        <div class="box">
+            <ul class="aboutUl clear">
+              {pc:content action="category" catid="5"  order="listorder desc" return="data"}
+                {loop $data $r}
+                <li {if $catid==$r[catid]}class="bg"{/if}><a href="{$r[url]}">{$r[catname]}</a></li>
+                {/loop}
+            {/pc}
+            </ul>
+        </div>
+        <ul class="newUl">
+          {pc:content action="lists" catid="$catid"  order="listorder desc" num="2" return="data" page="$page"}
+            {loop $data $r}
+                        <li class="clear">
+                            <a class="left fl"><img src="{$r[thumb]}"></a>
+                            <div class="right fr">
+                                <div class="month clear">
+                                    <h2 class="fl">{date('d',$r['inputtime'])}</h2>
+                                    <p class="fl">{date('M',$r['inputtime'])}.{date('Y',$r['inputtime'])}</p>
+                                </div>
+                                <a href="{$r[url]}" class="title">{$r[title]}</a>
+                                <div class="text">
+                                  {$r[description]}
+                                </div>
+                                <a href="{$r[url]}" class="more transition">View more+</a>
+                            </div>
+                        </li>
+            {/loop}
+            {/pc}
+
+        </ul>
+        <div class="pages">{$pages}</div>
+    </div>
+</div>
+{template "content","footer"}

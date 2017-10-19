@@ -1,0 +1,65 @@
+{template "content","header"}
+<div class="safe2">
+   <div class="inner clear">
+        <div class="left fl">
+            <div class="title">
+                <h3>{$CATEGORYS[1][catname]}</h3>
+                <p>Building Qualification Services</p>
+            </div>
+            <ul>
+              {pc:content action="category" catid="1" num="3"  order="listorder ASC" return="data"}
+              {loop $data $r}
+                <li {if $catid==$r[catid]}class="bg"{/if}><a href="{$r[url]}">{$r[catname]}</a></li>
+              {/loop}
+              {/pc}
+            </ul>
+        </div>
+        <div class="right fr">
+            <div class="ban1 clear">
+              {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%$catname%' " num="1"}
+              {loop $data $r}
+              <a  class="ban1-l fl"><img src="{$r[thumb]}" class="transition"></a>
+              <div class="ban1-r fr">
+                  <a  class="title">{$r[title]}</a>
+                  <div class="text">
+                    {$r[content]}
+                  </div>
+              </div>
+             {/loop}
+             {/pc}
+            </div>
+            <ul class="ban2 clear">
+                <li class="bg"><a href="#liu">代办流程</a></li>
+                <li><a href="#cai">所需材料</a></li>
+                <li><a href="">在线咨询</a></li>
+            </ul>
+            <div class="bot">
+                <div class="liu" id="liu">
+                    <div class="banTitle">代办流程</div>
+                     {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%代办流程%' " num="1"}
+                     {loop $data $r}
+
+                     {$r[content]}
+
+                    {/loop}
+                    {/pc}
+                </div>
+
+
+                <div class="liu" id="cai">
+                    <div class="banTitle banTitle2">所需材料</div>
+                    {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%所需材料%' " num="1"}
+                    {loop $data $r}
+
+                    {$r[content]}
+
+                   {/loop}
+                   {/pc}
+                </div>
+            </div>
+
+
+        </div>
+   </div>
+</div>
+{template "content","footer"}

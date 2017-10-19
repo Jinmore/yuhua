@@ -1,0 +1,52 @@
+{template "content","header"}
+<div class="safe3">
+   <div class="inner clear">
+       <div class="base2Title">安全生产许可证</div>
+       <div class="safe3Ul">
+           <ul class="ban2 clear">
+               <li class="bg"><a href="#xin">安证新办</a></li>
+               <li><a href="#yan">安证延期</a></li>
+               <li><a href="#guo">安证过期办理</a></li>
+           </ul>
+       </div>
+       <div class="safe3Bot">
+           <div class="box1" id="xin">
+               <div class="title">安证新办：</div>
+               <div class="text">
+                 {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=12 and title like '%安证新办%' " num="1"}
+                 {loop $data $r}
+
+                 {$r[content]}
+
+                {/loop}
+                {/pc}
+               </div>
+           </div>
+           <div class="box1" id="yan">
+               <div class="title">安证延期：</div>
+               <div class="text">
+                 {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=13 and title like '%安证延期%' " num="1"}
+                 {loop $data $r}
+
+                 {$r[content]}
+
+                {/loop}
+                {/pc}
+               </div>
+           </div>
+           <div class="box1" id="guo">
+               <div class="title">安证过期办理：</div>
+               <div class="text">
+                 {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=14 and title like '%安证过期%' " num="1"}
+                 {loop $data $r}
+
+                 {$r[content]}
+
+                {/loop}
+                {/pc}
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,30 @@
+{template "content","header"}
+<div class="about contact">
+    <div class="inner">
+        <div class="box">
+            <ul class="aboutUl clear">
+                <li><a href="{$CATEGORYS[6][url]}">公司介绍</a></li>
+                <li class="bg"><a href="{$CATEGORYS[28][url]}">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="txt">
+          {$CATEGORYS[28][description]}
+        </div>
+        <div class="map clear">
+          {pc:get  sql="select * from ld_news a left join ld_news_data b on a.id=b.id where a.id=27" num="1"}
+            
+          {loop $data $r}
+            <div class="left fl"><img src="{$r[thumb]}"></div>
+            <div class="right fr">
+                <div class="title">公司地址</div>
+                <div class="bot">
+                  {$r[content]}
+
+                </div>
+            </div>
+            {/loop}
+            {/pc}
+        </div>
+    </div>
+</div>
+{template "content","footer"}
