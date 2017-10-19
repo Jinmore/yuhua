@@ -37,7 +37,7 @@
          <?php endforeach;?>
 
         </select>
-          <!-- <?php echo menu_linkage(3360,'L_3360');?> -->
+
         <input type="submit" class="sub fr" value="查询">
       </form>
 
@@ -78,7 +78,8 @@
     });
 
     $(".forms").submit(function(e){
-
+      $("#titleselect").text();
+      $(".bot").html();
       var url=$(this).attr("action");
          $.ajax({
            url:url,

@@ -22,8 +22,11 @@ $(function () {
         $(".blank").show();
     });
     $(".conBox .title .close").click(function () {
+
         $(".conBox").hide();
         $(".blank").hide();
+        $("#titleselect").text();
+        $(".bot").html();
     });
     //锚点
     $('ul.ban2 li a').click(function() {

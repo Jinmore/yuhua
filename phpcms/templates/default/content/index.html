@@ -8,8 +8,6 @@
             <div class="close fr"></div>
         </div>
         <div class="bot">
-
-
         </div>
     </div>
     <div class="blank"></div>
