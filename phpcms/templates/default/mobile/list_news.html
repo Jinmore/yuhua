@@ -1,0 +1,32 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+      {pc:get  sql="select * from ld_category  where parentid='5'" num="2"}
+        {loop $data $r}
+          <li {if $catid==$r[catid]}class="bg"{/if}><a href="{list_url($r[catid])}">{$r[catname]}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+    <div class="news">
+        <ul>
+          {pc:mobile action="lists" catid="$catid"  order="listorder desc" num="6" return="data" page="$page"}
+            {loop $data $r}
+            <li class="clear">
+                <a href="{show_url($catid,$r[id])}" class="left fl"><img src="{IMG_PATH}mobile/news_12.jpg"></a>
+                <a href="{show_url($catid,$r[id])}" class="right fr">
+                    <div class="title">
+                      {$r[title]}
+                    </div>
+                    <div class="text">
+                        {$r[description]}
+                    </div>
+                    <div class="more">View more+</div>
+                </a>
+            </li>
+            {/loop}
+            {/pc}
+        </ul>
+          <div class="pages">{$pages}</div>
+    </div>
+</div>
+{template "mobile","footer"}

@@ -455,4 +455,9 @@ $LANG['clear_data'] = '一键清理';
 $LANG['player_manage'] = '播放器管理';
 $LANG['video_upload'] = '视频上传'; 
 $LANG['release_point_management'] = '发布点管理';
+$LANG['mobile'] = '手机模块';
+$LANG['mobile_add'] = '添加';
+$LANG['mobile_edit'] = '修改';
+$LANG['mobile_delete'] = '删除';
+$LANG['cate_manage'] = '分类管理';
 ?>

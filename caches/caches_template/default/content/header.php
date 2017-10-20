@@ -11,7 +11,7 @@
     <script src="<?php echo JS_PATH;?>default/jquery-1.8.3.min.js"></script>
     <script src="<?php echo JS_PATH;?>default/swiper.min.js"></script>
     <script src="<?php echo JS_PATH;?>default/Validform_v5.3.2.js"></script>
-    
+
     <?php
     $arr=array("1","2");
     if(in_array($catid,$arr) || !isset($catid)):?>
@@ -95,7 +95,7 @@
    $ccid=25;
  elseif($catid==5 || $top_parentid==5)
   $ccid=25;
-  elseif($catid==6 || $top_parentid==6)
+  elseif($catid==6 || $top_parentid==6 ||$catid==32)
    $ccid=29;
 
 }

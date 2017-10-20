@@ -1,0 +1,31 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+        <li class="bg"><a href="">建筑资质服务</a></li>
+    </ul>
+    <ul class="dai">
+
+         {pc:get  sql="select * from ld_category  where parentid='1'" num="3"}
+         {loop $data $r}
+           <li class="clear">
+               <div class="left fl">
+                   <h3>{$r[catname]}</h3>
+               </div>
+               <div class="right fl">
+                   <div class="title clear">
+                       <a href="{list_url($r[catid])}" class="fl">代办流程</a>
+                       <div class="line fl"></div>
+                       <a href="{list_url($r[catid])}" class="fl">所需材料</a>
+                   </div>
+                   <div class="text">
+                         {$r[description]}
+                   </div>
+                   <div class="title2">在线咨询</div>
+               </div>
+           </li>
+         {/loop}
+         {/pc}
+
+    </ul>
+</div>
+{template "mobile","footer"}

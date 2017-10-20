@@ -1,0 +1,36 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+      <li class="bg"><a href="{list_url(6)}">公司介绍</a></li>
+      <li><a href="{list_url(28)}">联系我们</a></li>
+
+    </ul>
+    <div class="company">
+      {pc:get  sql="select * from ld_about_data  where id='1'" num="1"}
+      {loop $data $r}
+      {$r[jianjie]}
+      {/loop}
+      {/pc}
+    </div>
+    {pc:get  sql="select * from ld_about_data  where id='1'" num="1"}
+    {loop $data $r}
+    <div class="our">
+      {$r[chengnuo]}
+    </div>
+    <div class="te">
+          {$r[tese]}
+        
+        <h3 class="base3Title">我们企业的方针</h3>
+        <div class="text">
+            诚信为本，全心全意维护客户利益； 周到细致，关注客户的每一个细节； 客观求实，
+            最大限度降低客户风险
+        </div>
+        <div class="teText">
+            我们"凝聚专业智慧，<br>
+            创造卓越品牌"与您一起成长!
+        </div>
+    </div>
+    {/loop}
+    {/pc}
+</div>
+{template "mobile","footer"}

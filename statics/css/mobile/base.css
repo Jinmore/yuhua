@@ -1,0 +1,42 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{margin:0;padding:0;}
+*{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;margin:0; padding:0;}
+body{font-family: "微软雅黑";font-size: 18px;color: #707070;line-height: 30px;}
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust: 100%;}
+a{text-decoration: none;display: block;}
+fieldset, img {border: 0;}
+/* 去掉 firefox 下此元素的边框 */
+abbr, acronym {border: 0;font-variant: normal;}
+i{font-style: normal;}
+ul,ol{list-style: none;}
+textarea{resize: none;}
+span{display: inline-block;}
+input,textarea,a{outline: none;border: none;font-family: "微软雅黑";border-radius: 0;font-size: 18px;color: #707070;-webkit-appearance: none;}
+input:-moz-placeholder,textarea:-moz-placeholder{color: #cdcdcd; opacity:1;}
+input::-moz-placeholder,textarea::-moz-placeholder{color: #cdcdcd; opacity:1;}
+input:-ms-input-placeholder,textarea:-ms-input-placeholder{color: #cdcdcd; opacity:1;}
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color: #cdcdcd; opacity:1;}
+input:focus,textarea:focus{border: 1px solid transparent;}
+img{border: none;vertical-align: top;}
+table{border:0;margin:0;border-collapse:collapse;border-spacing: 0;}
+table td{padding:0;}
+.clear:after{content: "";display: block;height: 0;*zoom:1;clear: both;}
+.fl{float: left;}
+.fr{float: right;}
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{ margin-left:8px;line-height:20px;height:20px; overflow:hidden;color:#999;font-size:12px;}
+.Validform_right{color:#71b83d; padding-left:20px;background:url(../../images/mobile/right.png) no-repeat left center;}
+.Validform_wrong{ color:red;padding-left:20px; white-space:nowrap;background:url(../../images/mobile/error.png) no-repeat left center;}
+.Validform_loading{padding-left:20px;background:url(../../images/mobile/onLoad.gif) no-repeat left center;}
+.Validform_error{/*background-color:#ffe7e7;*/}
+#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:200px; background:rgba(0,0,0,0.5); position:absolute; top:0; right:50px; z-index:5000; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');border-radius: 20px;}
+#Validform_msg .iframe{position:absolute; left:0; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px;  text-align:center; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#000;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:12px; top:8px; color:#fff; text-decoration:none;background: url("../../images/mobile/close.png") no-repeat 0 0;background-size: cover;height: 20px;width: 20px;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{ border-top:none; text-align:center;color: #fff;min-height: 50px;border-radius: 20px;
+ background:rgba(0,0,0,0.6) url("../../images/mobile/mark.png") no-repeat center 30px;background-size: 30px 30px;padding: 90px 10px 10px;font-size: 16px;}
+.transition{transition: all 0.3s;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-o-transition: all 0.3s;}
+.scroll-top{width: 60px;height: 60px;position: fixed;right: 20px;bottom: 90px;z-index: 10000;}
+.scroll-top img{width: 100%;height: 100%;}
+.red{color: #b40101;}
+.redBg{background-color: #b40101;}

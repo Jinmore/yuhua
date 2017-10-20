@@ -1,0 +1,16 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+          <li class="bg"><a >八大员、技工证书培训取证 </a></li>
+    </ul>
+    <div class="news">
+      <div class="bot">
+        {pc:get  sql="select * from ld_page  where catid='$catid'" num="1"}
+        {loop $data $r}
+        {$r[content]}
+        {/loop}
+        {/pc}
+      </div>
+    </div>
+</div>
+{template "mobile","footer"}

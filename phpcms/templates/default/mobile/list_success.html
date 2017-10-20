@@ -1,0 +1,22 @@
+{template "mobile","header"}
+<div class="success">
+    <ul class="base2Title redBg">
+        <li class="bg"><a href="{list_url($catid)}">{$catname}</a></li>
+    </ul>
+    <div class="successBox">
+        <ul class="successUl clear">
+          {pc:mobile action="lists" catid="$catid"  order="listorder desc" num="6" return="data" page="$page"}
+            {loop $data $r}
+            <li>
+                <a href="{$r[thumb]}" target="_blank">
+                    <div class="pic"><img src="{thumb($r[thumb],236,334)}"></div>
+                    <p>建筑企业资质证书</p>
+                </a>
+            </li>
+            {/loop}
+            {/pc}
+        </ul>
+    </div>
+    <div class="pages">{$pages}</div>
+</div>
+{template "mobile","footer"}

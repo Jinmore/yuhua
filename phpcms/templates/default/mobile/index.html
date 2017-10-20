@@ -1,0 +1,94 @@
+{template "mobile","header"}
+<div class="main">
+    <div class="zi">
+        <div class="baseTitle">
+            <h3>资质代理</h3>
+            <p>Qualification agent</p>
+        </div>
+        <div class="ziCon">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                {pc:get  sql="select * from ld_category  where parentid='1'" num="3"}
+                  {loop $data $r}
+                    <a class="swiper-slide" href="{list_url($r[url])}">
+                        <div class="box">
+                            <div class="pic"><img src="{IMG_PATH}mobile/zi_{$n}.png" class="img1"><img src="{IMG_PATH}mobile/zi2_{$n}.png" class="img2"></div>
+                        </div>
+                        <div class="title">{$r[catname]}</div>
+                        <div class="text">{$r[description_er]}</div>
+                        <div class="arrow"><img src="{IMG_PATH}mobile/arrow_03.png"></div>
+                    </a>
+                    {/loop}
+                    {/pc}
+                    <a class="swiper-slide" href="{list_url(2)}">
+                        <div class="box">
+                            <div class="pic"><img src="{IMG_PATH}mobile/zi_4.png" class="img1"><img src="{IMG_PATH}mobile/zi2_4.png" class="img2"></div>
+                        </div>
+                        <div class="title">{$CATEGORYS[2][catname]}</div>
+                        <div class="text">{$CATEGORYS[2][description]}</div>
+                        <div class="arrow"><img src="{IMG_PATH}mobile/arrow_03.png"></div>
+                    </a>
+                    <a class="swiper-slide" href="{page_url(32)}">
+                        <div class="box">
+                            <div class="pic"><img src="{IMG_PATH}mobile/zi_5.png" class="img1"><img src="{IMG_PATH}mobile/zi2_5.png" class="img2"></div>
+                        </div>
+                        <div class="title">八大员、技工证书培训取证</div>
+                        <div class="text">为企业代办建筑类资质、简化条</div>
+                        <div class="arrow"><img src="{IMG_PATH}mobile/arrow_03.png"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-button-prev"><img src="{IMG_PATH}mobile/prev_03.png"></div>
+            <div class="swiper-button-next"><img src="{IMG_PATH}mobile/prev_05.png"></div>
+        </div>
+    </div>
+    <div class="an">
+        <div class="baseTitle">
+            <h3>成功案例</h3>
+            <p>success case</p>
+        </div>
+        <div id="slide3d" class="slide-carousel slide-3d">
+            <ul  class="item-list">
+              {pc:mobile action="lists" catid="4" order="listorder desc"}
+              {loop $data $r}
+                <li class="item{$n}">
+                    <div class="item-content">
+                        <a href="javascript:void(0);">
+                            <img class="cover-img" src="{IMG_PATH}mobile/an1_03.jpg" alt="">
+                        </a>
+                    </div>
+                </li>
+              {/loop}
+              {/pc}
+            </ul>
+            <div class="controls">
+                <a  class="item-prev glyphicon glyphicon-menu-left" href="javascript:void(0);"><img src="{IMG_PATH}mobile/an2_06.png"></a>
+                <a  class="item-next glyphicon glyphicon-menu-right" href="javascript:void(0);"><img src="{IMG_PATH}mobile/an2_09.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="six">
+        <div class="baseTitle">
+            <h3>六大步骤，让服务更高效</h3>
+            <p>SIX STEPS TO MAKE SERVICES MORE EFFICIENT</p>
+        </div>
+        <ul class="sixUl clear">
+          {pc:mobile action="lists" catid="16" order="listorder desc,id desc"}
+          {loop $data $r}
+                <li><a ><img src="{$r[thumb]}"><p>{$r[title]}</p></a></li>
+          {/loop}
+          {/pc}
+        </ul>
+    </div>
+    <div class="jie">
+        <div class="baseTitle">
+            <h3>公司介绍</h3>
+            <p>Company Profile</p>
+        </div>
+        <div class="text">
+        {$CATEGORYS[27][description]}
+        </div>
+    </div>
+</div>
+{template "mobile","footer"}

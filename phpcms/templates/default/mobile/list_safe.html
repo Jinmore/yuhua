@@ -1,0 +1,57 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+      {pc:get  sql="select * from ld_category  where parentid='2'" num="3"}
+        {loop $data $r}
+          <li {if $catid==$r[catid]}class="bg"{/if}><a href="{list_url($r[catid])}">{$r[catname]}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+   <div class="build2">
+       <div class="top">
+         {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%$catname%' " num="1"}
+         {loop $data $r}
+           <div class="top-1 clear">
+               <a href="" class="left fl"><img src="{$r[thumb]}"></a>
+               <div class="right fr">
+                   <div class="title">{$r[title]}</div>
+                   <div class="text">
+                      {$r[description]}
+                   </div>
+               </div>
+           </div>
+           {/loop}
+           {/pc}
+           <ul class="clear">
+               <li><a href="#dai">代办流程</a></li>
+               <li><a href="#xu">所需材料</a></li>
+               <li><a href="javascript:;">在线咨询</a></li>
+           </ul>
+       </div>
+       <div class="bot">
+           <div class="box box1">
+               <div class="title" id="dai">代办流程</div>
+               {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%代办流程%' " num="1"}
+               {loop $data $r}
+
+               {$r[content]}
+
+              {/loop}
+              {/pc}
+
+           </div>
+           <div class="box">
+               <div class="title" id="xu">所需材料</div>
+               {pc:get sql="select * from `ld_news` a left join ld_news_data b on a.id=b.id  where a.catid=$catid and title like '%所需材料%' " num="1"}
+               {loop $data $r}
+
+               {$r[content]}
+
+              {/loop}
+              {/pc}
+
+           </div>
+       </div>
+   </div>
+</div>
+{template "mobile","footer"}

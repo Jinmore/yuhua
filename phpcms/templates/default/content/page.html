@@ -1,0 +1,21 @@
+{template "content","header"}
+<div class="main">
+    <div class="safe">
+        <div class="inner">
+            <div class="baseTitle">
+                <h3>八大员、技工证书培训取证</h3>
+                <!-- <p>Building Qualification Services</p> -->
+            </div>
+            <div class="new2Text">
+             {pc:get  sql="select * from ld_page  where catid='$catid'" num="1"}
+             {loop $data $r}
+             {$r[content]}
+             {/loop}
+             {/pc}
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{template "content","footer"}

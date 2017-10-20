@@ -321,5 +321,19 @@ return array (
     'installdate' => '2010-10-20',
     'updatedate' => '2010-10-20',
   ),
+  'mobile' => 
+  array (
+    'module' => 'mobile',
+    'name' => '手机模块',
+    'url' => 'mobile/',
+    'iscore' => '0',
+    'version' => '1.0',
+    'description' => '手机模块',
+    'setting' => '',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2017-10-20',
+    'updatedate' => '2017-10-20',
+  ),
 );
 ?>

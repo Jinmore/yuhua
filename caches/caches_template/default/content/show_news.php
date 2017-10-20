@@ -11,7 +11,7 @@
             </ul>
         </div>
         <div class="new2Top">
-            <div class="title">住建部取消四项设计施工一体化资质的通知</div>
+            <div class="title"><?php echo $title;?></div>
             <p>发布时间：<?php echo date('Y-m-d',strtotime($inputtime));?><span>浏览次数：<span id="hits" style="margin:0 1px;"></span>次</span>来源：<?php if(!empty($copyfrom)) { ?><?php echo $copyfrom;?><?php } else { ?>裕华丹青<?php } ?></p>
         </div>
         <div class="new2Text">

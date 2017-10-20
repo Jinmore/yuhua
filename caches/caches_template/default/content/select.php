@@ -88,7 +88,6 @@
            dataType:"JSON",
            success:function(data)
            {
-
              $("#titleselect").text(data.title);
              $(".bot").html(data.content);
            }
@@ -97,7 +96,4 @@
     });
 
   });
-
-
-
 </script>

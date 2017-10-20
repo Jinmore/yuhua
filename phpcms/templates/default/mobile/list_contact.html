@@ -1,0 +1,17 @@
+{template "mobile","header"}
+<div class="main">
+    <ul class="base2Title redBg">
+      <li ><a href="{list_url(6)}">公司介绍</a></li>
+      <li class="bg"><a href="{list_url(28)}">联系我们</a></li>
+    </ul>
+    <div class="lian">
+        <img src="{IMG_PATH}mobile/map_03.jpg" class="map">
+        <h3 class="title" style="margin-bottom:10px;">公司地址</h3>
+        {pc:get  sql="select * from ld_news a left join ld_news_data b on a.id=b.id where a.id=27" num="1"}
+        {loop $data $r}
+          {$r[content]}
+        {/loop}
+        {/pc}
+    </div>
+</div>
+{template "mobile","footer"}
