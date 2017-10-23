@@ -12,9 +12,9 @@
                     <p><img src="<?php echo IMG_PATH;?>default/f_06.png"><?php echo CONTACT_TEL;?></p>
                     <p><img src="<?php echo IMG_PATH;?>default/f_08.png">北京市海淀区西三环紫竹院路31号华澳中心（北京香格里拉饭店西侧）1015室</p>
                     <ul class="clear">
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
-                        <li><a href=""></a></li>
+                        <li><a href="<?php echo $CATEGORYS['33']['url'];?>" target="_blank"></a></li>
+                        <li><a href="<?php echo $CATEGORYS['34']['url'];?>" target="_blank"></a></li>
+                        <li><a href="<?php echo $CATEGORYS['35']['url'];?>" target="_blank"></a></li>
                     </ul>
                 </div>
                 <div class="right fr">
